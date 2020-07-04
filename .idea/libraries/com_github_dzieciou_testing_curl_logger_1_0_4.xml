@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.github.dzieciou.testing:curl-logger:1.0.4" type="repository">
+    <properties maven-id="com.github.dzieciou.testing:curl-logger:1.0.4" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/dzieciou/testing/curl-logger/1.0.4/curl-logger-1.0.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.8.0-beta2/slf4j-api-1.8.0-beta2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

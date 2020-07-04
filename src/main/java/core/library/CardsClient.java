@@ -1,8 +1,11 @@
 package core.library;
 
 import java.util.Map;
+
+import com.github.dzieciou.testing.curl.CurlLoggingRestAssuredConfigFactory;
 import core.config.CardApiProperties;
 import io.restassured.RestAssured;
+import io.restassured.config.RestAssuredConfig;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -34,7 +37,7 @@ public class CardsClient {
    * @return Response restAssured response object
    */
 	public Response get(String URI) {
-		return RestAssured.get(url+URI);
+		return RestAssured.given().config(CurlLoggingRestAssuredConfigFactory.createConfig()).get(url+URI);
 	}
 	
    /**
@@ -54,7 +57,9 @@ public class CardsClient {
    * @return Response restAssured response object
    */
 	public Response post(String URI, Map<String, Object> body) {
-		return RestAssured.given().contentType(ContentType.JSON).body(body).
+		//RestAssuredConfig config = CurlLoggingRestAssuredConfigFactory.createConfig();
+
+		return RestAssured.given().config(CurlLoggingRestAssuredConfigFactory.createConfig()).contentType(ContentType.JSON).body(body).
 				post(url+URI);
 	}
 	

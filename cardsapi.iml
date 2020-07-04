@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="com.github.dzieciou.testing:curl-logger:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:rest-assured:4.3.0" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy:3.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy:groovy-xml:3.0.2" level="project" />
@@ -57,5 +58,9 @@
     <orderEntry type="library" name="Maven: com.github.mifmif:generex:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: dk.brics.automaton:automaton:1.11-8" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20190722" level="project" />
+    <orderEntry type="library" name="Maven: com.github.dzieciou.testing:curl-logger:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.0-alpha0" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.0.9" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.0.9" level="project" />
   </component>
 </module>

@@ -56,7 +56,12 @@
 	    <artifactId>json</artifactId>
 	    <version>20190722</version>
 	</dependency>
-				
-	  
+		<!-- https://mvnrepository.com/artifact/com.github.dzieciou.testing/curl-logger -->
+		<dependency>
+			<groupId>com.github.dzieciou.testing</groupId>
+			<artifactId>curl-logger</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+
   </dependencies>
 </project>
