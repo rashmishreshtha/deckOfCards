@@ -3,6 +3,10 @@ package core.asserts;
 import org.testng.Assert;
 import static org.hamcrest.Matchers.*;
 import io.restassured.response.Response;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 import static io.restassured.module.jsv.JsonSchemaValidator.*;
 
 public class NewDeckValidation implements IValidations {
@@ -39,7 +43,12 @@ public class NewDeckValidation implements IValidations {
 
 	@Override
 	public void schema() {
-		newDeckResponse.then().assertThat().body(matchesJsonSchemaInClasspath("schema_matchers/new_deck.json"));
+		try {
+			InputStream jsonschema = new FileInputStream("./resources/schema_matchers/new_deck.json");
+			newDeckResponse.then().assertThat().body(matchesJsonSchema(jsonschema));
+		}catch (Exception exp){
+			System.out.println(exp.getMessage());
+		}
 	}
 
 	@Override

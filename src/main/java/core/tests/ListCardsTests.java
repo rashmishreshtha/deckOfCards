@@ -14,7 +14,7 @@ public class ListCardsTests {
 	String cardDeck;
 		
 	public void createCardPiles() {
-		Map<String, String> testData = new HashMap<>();
+		Map<String, String> testData = new HashMap<String, String>();
 		testData.put("Don", "AS,2S");
 		testData.put("John", "5C,KS,0H");
 		

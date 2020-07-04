@@ -1,9 +1,13 @@
 package core.asserts;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.is;
 import org.testng.Assert;
 import io.restassured.response.Response;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 public class DrawDeckValidation implements IValidations {
 
@@ -38,7 +42,12 @@ public class DrawDeckValidation implements IValidations {
 
 	@Override
 	public void schema() {
-		response.then().assertThat().body(matchesJsonSchemaInClasspath("schema_matchers/draw_deck.json"));
+		try{
+		InputStream jsonschema = new FileInputStream("./resources/schema_matchers/draw_deck.json");
+		response.then().assertThat().body(matchesJsonSchema(jsonschema));}
+		catch (Exception exp){
+			System.out.println(exp.getMessage());
+		}
 	}
 
 	@Override

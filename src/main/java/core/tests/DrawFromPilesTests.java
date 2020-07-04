@@ -39,7 +39,7 @@ public class DrawFromPilesTests {
 	@Test
 	public void drawCards() {
 		String[] cards = createCardPiles(cardDeck, 2, "player1");
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("cards", cards[0]);
 		
 		Response res = cc.get("/"+this.cardDeck+"/pile/player1/draw/", parameters);
@@ -55,7 +55,7 @@ public class DrawFromPilesTests {
 	@Test
 	public void drawCount() {
 		createCardPiles(cardDeck, 6, "player2");
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("count", "5");
 		
 		Response res = cc.get("/"+this.cardDeck+"/pile/player2/draw/", parameters);

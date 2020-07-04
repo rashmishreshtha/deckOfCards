@@ -29,7 +29,7 @@ public class AddAndShufflePilesTests {
 	public void addToPile() {
 		Faker faker = new Faker();
 
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("cards", "AS,2S");
 		pileName = faker.name().firstName();
 		Response res = cc.get("/"+cardDeck+"/pile/"+pileName+"/add/", parameters);

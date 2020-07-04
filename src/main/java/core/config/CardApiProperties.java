@@ -1,5 +1,6 @@
 package core.config;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -23,8 +24,9 @@ public class CardApiProperties {
 	public CardApiProperties(String fileName){
 		prop = new Properties();
 		String envConfig = fileName;
-		inputStream = getClass().getClassLoader().getResourceAsStream(envConfig);
+		//inputStream = getClass().getClassLoader().getResourceAsStream(envConfig);
 		try {
+			InputStream inputStream = new FileInputStream("./resources/" + envConfig);
 			if(inputStream != null) {
 				prop.load(inputStream);
 			} else {

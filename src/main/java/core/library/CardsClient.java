@@ -23,9 +23,10 @@ public class CardsClient {
    * @param environment Name of the environment
    * @return void
    */
-	public CardsClient(String environement) {
-		cap = new CardApiProperties(environement+"_env.properties");
+	public CardsClient(String environment) {
+		cap = new CardApiProperties(environment+"_env.properties");
 		url = cap.prop.getProperty("baseURL")+cap.prop.getProperty("commonURI");
+		//url="https://deckofcardsapi.com/api/deck";
 	}
    /**
    * This method sends a GET request to server and returns the Response object

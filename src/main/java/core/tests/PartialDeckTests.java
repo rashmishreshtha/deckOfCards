@@ -20,7 +20,7 @@ public class PartialDeckTests {
 	
 	@Test
 	public void createPartialDeck() {
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("cards", "AS,2S,KS,AD,2D,KD");
 		
 		Response res = cc.get("/new/shuffle/", parameters);

@@ -31,7 +31,7 @@ public class NewDeckTests {
 	
 	@Test
 	public void createNewDeck_with_jockers() {
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("jokers_enabled", "true");
 		Response res = cc.get("/new/", parameters);
 		
@@ -44,7 +44,7 @@ public class NewDeckTests {
 	
 	@Test
 	public void createNewDeck_with_out_jockers() {
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("jokers_enabled", "false");
 		Response res = cc.get("/new/", parameters);
 		
@@ -59,9 +59,9 @@ public class NewDeckTests {
 	//POST method requires a CSRF cookie (authentication)
 	//I could not able to find documentation on how to generate one.
 	public void createNewDeck_with_POST() {
-		Map<String, Object> data = new HashMap<>();
+		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("jokers_enabled", true);
-		Response res = cc.post("/new/", data);
+		Response res = cc.post("/new", data);
 		
 		NewDeckValidation Check = new NewDeckValidation(res);
 		Check.success();

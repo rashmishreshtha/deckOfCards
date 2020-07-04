@@ -38,7 +38,7 @@ public class DrawCardsTests {
 	
 	@Test(dependsOnMethods = { "drawSingleCardFromNewDeck" })
 	public void drawSingleCardFromExistingDeck() {
-		Map<String, String> parameters = new HashMap<>();
+		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("count", "5");
 		
 		Response res = cc.get("/"+this.cardDeck+"/draw", parameters);
